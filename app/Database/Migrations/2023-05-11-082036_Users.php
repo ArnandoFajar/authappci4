@@ -12,6 +12,7 @@ class Users extends Migration
             'id'          => [
                 'type'           => 'INT',
                 'constraint'     => '11',
+                'auto_increment' => true
             ],
             'email'          => [
                 'type'           => 'VARCHAR',
@@ -25,6 +26,10 @@ class Users extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
             ],
+            'loginattemp'       => [
+                'type'           => 'int',
+                'constraint'     => '2',
+            ],
             'created_at' => [
                 'type'           => 'DATETIME',
                 'null'            => true,
@@ -35,7 +40,7 @@ class Users extends Migration
             ]
 
         ]);
-        $this->forge->addPrimaryKey('id', true);
+        $this->forge->addKey('id', true);
         $this->forge->createTable('users');
     }
 
