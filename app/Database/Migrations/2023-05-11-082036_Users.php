@@ -26,9 +26,13 @@ class Users extends Migration
                 'type'           => 'VARCHAR',
                 'constraint'     => '100',
             ],
-            'loginattemp'       => [
+            'loginattempt'       => [
                 'type'           => 'int',
                 'constraint'     => '2',
+            ],
+            'active'       => [
+                'type'           => 'int',
+                'constraint'     => '1',
             ],
             'created_at' => [
                 'type'           => 'DATETIME',

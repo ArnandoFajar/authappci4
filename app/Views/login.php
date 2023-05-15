@@ -44,7 +44,12 @@
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <?php echo session()->getFlashdata('error'); ?>
             </div>
+        <?php elseif (!empty(session()->getFlashdata('success'))) : ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo session()->getFlashdata('success'); ?>
+            </div>
         <?php endif; ?>
+
         <form method="post" action="<?= base_url(); ?>login/process">
             <?= csrf_field(); ?>
             <h1 class="h3 mb-3 fw-normal">Lahan Sikam</h1>
@@ -55,10 +60,10 @@
                 <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
             </div>
             <div class="mb-1">
-                <button type="submit" class="w-100 btn btn-lg btn-primary">Login</button>
+                <button type="submit" class="w-100 btn btn-sm btn-primary">Login</button>
             </div>
             <div class="mb-3">
-                <a href="register" class="w-100 btn btn-lg btn-warning">Register</a>
+                <a href="register" class="w-100 btn btn-sm btn-warning">Register</a>
             </div>
         </form>
     </main>
